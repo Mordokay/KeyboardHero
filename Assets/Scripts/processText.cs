@@ -100,7 +100,6 @@ public class processText : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             ToggleMenu();
-            Debug.Log("menu!!!");
         }
 
         if (currentLine < allLines.Count)
@@ -109,7 +108,11 @@ public class processText : MonoBehaviour {
             {
                 if (allLines[currentLine].letterCount > 0)
                 {
-                    if (allLines[currentLine].letters[allLines[currentLine].letterToCheckPos].GetComponent<TextMesh>().text == Input.inputString)
+                    //byte[] bytes = Encoding.Default.GetBytes(allLines[currentLine].letters[allLines[currentLine].letterToCheckPos].GetComponent<TextMesh>().text);
+                    //byte[] bytes2 = Encoding.Default.GetBytes(Input.inputString);
+                    //Debug.Log("bytes " + (int)((char)allLines[currentLine].letters[allLines[currentLine].letterToCheckPos].GetComponent<TextMesh>().text[0]));
+                    //Debug.Log("bytes2 " + (int)((char)Input.inputString[0]));
+                    if (allLines[currentLine].letters[allLines[currentLine].letterToCheckPos].GetComponent<TextMesh>().text.Equals(Input.inputString))
                     {
                         allLines[currentLine].letters[allLines[currentLine].letterToCheckPos].GetComponent<TextMesh>().color = new Color(220, 0, 0);
 

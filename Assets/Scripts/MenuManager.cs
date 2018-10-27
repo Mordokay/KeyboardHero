@@ -85,12 +85,16 @@ public class MenuManager : MonoBehaviour {
                             }
                             //Debug.Log("Add a new line here : " + collective);
                             result += collective + System.Environment.NewLine;
-                            collective = w;
+                            collective = w + " ";
                         }
                         else
                         {
                             collective += w + " ";
                         }
+                    }
+                    if (collective.EndsWith(" "))
+                    {
+                        collective = collective.Substring(0, collective.Length - 1);
                     }
                     result += collective + System.Environment.NewLine;
                 }
@@ -100,7 +104,8 @@ public class MenuManager : MonoBehaviour {
                 }
             }
 
-            StartCoroutine(AddStoryEnumerator(titleLevelMaker.text, result));
+            //Debug.Log(result);
+            StartCoroutine(AddStoryEnumerator(titleLevelMaker.text, result.Trim()));
             menu();
             titleLevelMaker.text = "";
             contentLevelMaker.text = "";
