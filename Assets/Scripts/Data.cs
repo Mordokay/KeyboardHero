@@ -12,7 +12,7 @@ public class Data : MonoBehaviour {
     void Awake()
     {
         DontDestroyOnLoad(this);
-
+//
         if (dataInstance == null)
         {
             dataInstance = this;
