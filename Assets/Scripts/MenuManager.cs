@@ -26,8 +26,8 @@ public class MenuManager : MonoBehaviour {
     public GameObject previousPage;
     public GameObject nextPage;
 
-    string addStory = "http://mordokay.com/webgl/Games/KeyboardHero/addStory.php";
-    string getStories = "http://mordokay.com/webgl/Games/KeyboardHero/GetStories.php";
+    string addStory = "https://mordokay.com/webgl/Games/KeyboardHero/addStory.php";
+    string getStories = "https://mordokay.com/webgl/Games/KeyboardHero/GetStories.php";
 
     public class Story
     {
